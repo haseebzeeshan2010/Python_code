@@ -1,0 +1,13 @@
+# -------------------------------------------------
+# Arrange the lines
+# -------------------------------------------------
+#First take the input of the radius from the user
+RECEIVE radius FROM (REAL) KEYBOARD
+#Assign the variable's values
+SET myPi TO 3.14159
+#Calculate the area and circumference and assign them to their own variables
+SET area TO myPi * (radius ^ 2)
+SET circumference TO 2 * myPi * radius
+#Display what the area and circumference is
+SEND ("Area is", area) TO DISPLAY
+SEND ("Circumference is", circumference) TO DISPLAY

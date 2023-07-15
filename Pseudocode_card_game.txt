@@ -1,0 +1,86 @@
+DISPLAY "Welcome to the card game(R = Red, Y = Yellow, B = Blue)"
+
+SET ordered_deck = ["R 1","R 2","R 3","R 4","R 5","R 6","R 7","R 8","R 9","R 10","Y 1","Y 2","Y 3","Y 4","Y 5","Y 6","Y 7","Y 8","Y 9","Y 10","B 1","B 2","B 3","B 4","B 5","B 6","B 7","B 8","B 9","B 10"]
+SET shuffled_deck = []
+SET pick = True
+SET player1_counter = 0
+SET player2_counter = 0
+
+SET player1 = []
+SET player2 = []
+
+SET randomnum_player1 = 0
+SET randomnum_player2 = 0
+
+SET cards = LENGTH (ordered_deck)
+
+FOR shuffle IN ordered_deck
+    SET shuffled_deck[RANDOM(0,39)] = shuffled_deck
+
+WHILE cards != 0
+    SET randomnum_player1 = RANDOM(0,LENGTH (shuffled_deck)-1)
+    APPEND shuffled_deck[randomnum_player1] TO player1
+    SET player1_process = SPLIT ELEMENTS INTO ARRAY shuffled_deck[randomnum_player1]
+    REMOVE randomnum_player1 ELEMENT FROM shuffled_deck
+
+    SET randomnum_player2 = RANDOM(0,LENGTH (shuffled_deck)-1)
+    APPEND shuffled_deck[randomnum_player2] TO player2
+    SET player2_process = SPLIT ELEMENTS INTO ARRAY shuffled_deck[randomnum_player2]
+    REMOVE randomnum_player2 ELEMENT FROM shuffled_deck
+
+    SET player1_colour = player1_process[0]
+    SET player1_number = player1_process[1]
+
+    SET player2_colour = player2_process[0]
+    SET player2_number = player2_process[1]
+
+    IF player1_colour = R and player2_colour = B THEN
+        SET player1_counter += 1
+        DISPLAY(Player 1 got a (player1_colour) card with a number of (player1_number))
+        DISPLAY(Player 1 won this round)
+
+    ELSE IF player2_colour = R and player1_colour = B THEN
+        SET player2_counter += 1
+        DISPLAY(Player 1 got a (player1_colour) card with a number of (player1_number))
+        DISPLAY(Player 2 won this round)
+
+    ELSE IF player1_colour = Y and player2_colour = R THEN
+        SET player1_counter += 1
+        DISPLAY(Player 1 got a (player1_colour) card with a number of (player1_number))
+        DISPLAY(Player 1 won this round)
+
+    ELSE IF player2_colour = Y and player1_colour = R THEN
+        SET player2_counter += 1
+        DISPLAY(Player 1 got a (player1_colour) card with a number of (player1_number))
+        DISPLAY(Player 2 won this round)
+
+    ELSE IF player1_colour = B and player2_colour = Y THEN
+        SET player1_counter += 1
+        DISPLAY(Player 1 got a (player1_colour) card with a number of (player1_number))
+        DISPLAY(Player 1 won this round)
+
+    ELSE IF player2_colour = B and player1_colour = Y THEN
+        SET player2_counter += 1
+        DISPLAY(Player 1 got a (player1_colour) card with a number of (player1_number))
+        DISPLAY(Player 2 won this round)
+
+    ELSE
+        DISPLAY(Player 1 got a (player1_colour) card with a number of (player1_number))
+
+        IF player2_number > player1_number THEN
+            SET player2_counter+=1
+            DISPLAY(Player 2 won this round because of a higher number on the card!)
+        ELSE
+            SET player1_counter += 1
+            DISPLAY(Player 1 won this round because of a higher number on the card!)
+
+    DISPLAY("")
+    RECIEVE "Write any character to continue : " FROM KEYBOARD
+    DISPLAY("")
+
+IF player1_counter > player2_counter THEN
+    DISPLAY(Good job Player 1, you have won the game!)
+ELSE IF player1_counter = player2_counter THEN
+    DISPLAY(It's a draw!)
+ELSE
+    DISPLAY(Good job Player 2, you have won the game!)    

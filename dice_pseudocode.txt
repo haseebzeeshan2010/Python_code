@@ -1,0 +1,6 @@
+FUNCTION dice ()
+    simpleDie = RANDOM(6)
+    RETURN simpleDie
+END FUNCTION
+
+roll_the_die = dice()

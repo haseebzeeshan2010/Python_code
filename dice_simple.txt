@@ -1,0 +1,17 @@
+# Import the random library
+import random
+# Define a function called dice, that doesn't accept any parameters 
+def dice():
+   # Use the predefined function randint from the random library
+   # randint function takes in two integers as inputs, and provides a random number between
+   # those two inputs
+   # save the random integer in local variable 'simpleDie'
+   simpleDie = random.randint(1,6)
+   #return the random integer
+   return simpleDie
+
+# call the function
+# save the value in global variable 'roll_the_die'
+roll_the_die = dice()
+# print the answer
+print(f"The throw resulted in : {roll_the_die}")

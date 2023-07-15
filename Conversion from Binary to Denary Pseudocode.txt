@@ -1,0 +1,63 @@
+SEND
+     _____________________
+    |  _________________  |
+    | | 1100 = 12       | |
+    | |_________________| |
+    |  ___ ___ ___   ___  |
+    | | 7 | 8 | 9 | | + | |
+    | |___|___|___| |___| |
+    | | 4 | 5 | 6 | | - | |
+    | |___|___|___| |___| |
+    | | 1 | 2 | 3 | | x | |
+    | |___|___|___| |___| |
+    | | . | 0 | = | | / | |
+    | |___|___|___| |___| |
+    |_____________________|
+    
+TO DISPLAY
+
+RECIEVE conversion_type FROM KEYBOARD
+SET output TO []
+SET indices TO 0
+SET answer TO ""
+SET total TO 0
+SET SWITCH TO []
+
+
+
+IF conversion_type = "DB" THEN 
+    RECIEVE number FROM KEYBOARD
+    IF number > 0 THEN 
+        WHILE number != 0 DO
+
+            IF number % 2 = 0 THEN
+                SET number TO number/2
+                SET output[0] TO 0 
+            ELSE:
+                SET number TO (number-1)/2
+                SET output[0] TO 1
+
+        FOR EACH string FROM output DO
+            SET answer TO answer+str(string)
+    ELSE:
+        SET answer TO 0
+
+    SEND The binary answer is (answer) TO DISPLAY
+
+ELSE IF conversion_type == "BD":
+    RECIEVE number FROM KEYBOARD
+
+    FOR EACH b FROM number DO
+        SET switch[0] TO b
+
+    FOR EACH binary FROM switch DO
+
+        IF binary = 1 THEN
+            SET VALUE OF NEW output ARRAY ELEMENT TO (2**indices) 
+            SET indices TO indices + 1
+        ELSE
+            SET indices TO indices + 1
+    FOR EACH add FROM output DO
+        SET total TO total + add
+        
+    SEND The Denary number is (total) TO DISPLAY

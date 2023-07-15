@@ -1,0 +1,37 @@
+# A repeat loop can execute a minimum of one times, 
+# because the condition is at the end 
+# of the loop ,however a while loop 
+# may never execute since the condition 
+# is at the beginning of the loop, before any code is run.
+
+
+
+
+# import random
+# count = 0
+# number = random.randint(1,100)
+# print(number)
+# count+=1
+
+# while number <= 80:
+#     number = random.randint(1,100)
+#     count+=1
+
+# print(f"The count is: {count}")
+
+
+# Ask the user how many times to repeat
+# numPasses = int (input ("How many passes? "))
+
+# # Complete the 'for' loop using numPasses
+# for i in range(numPasses):
+
+#     inString = input ("Enter a word: ")
+
+#     # Complete the selection with calls to the string manipulation subprograms
+#     if (inString.isupper() == True and inString.islower() == False):           # Check if string is all upper case
+#         print (inString.lower())           # Convert to lower case
+#     elif (inString.islower() == True and inString.isupper() == False):         # Check if string is all lower case
+#         print (inString.upper())           # Convert to upper case
+#     else:                               # Mixed case
+#         print ("Have another go")

@@ -1,0 +1,4 @@
+RECEIVE upperBound FROM (INTEGER) KEYBOARD
+SET randomNumber TO RANDOM (upperBound)
+SET answer TO 2 ** randomNumber
+SEND (upperBound, randomNumber, answer) TO DISPLAY

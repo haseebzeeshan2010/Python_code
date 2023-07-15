@@ -1,0 +1,27 @@
+RECEIVE number FROM (INTEGER) KEYBOARD
+
+IF (NOT ((number >= 1) AND (number <= 100))) THEN
+
+SEND “Invalid number” TO DISPLAY
+
+ELSE
+
+IF ((number < 11) OR (number >= 90)) THEN
+
+SEND “Taking OR branch” TO DISPLAY
+
+ELSE
+
+IF (NOT ((number MOD 2) = 0)) THEN
+
+SEND “Odd number” TO DISPLAY
+
+ELSE        
+
+SEND “End” TO DISPLAY
+
+END IF
+
+END IF
+
+END IF

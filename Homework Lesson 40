@@ -1,0 +1,17 @@
+1. They are protocols that determine how data should be transmitted, recieved and formatted
+
+2.IMAP and SMTP
+
+3. Because HTTPS(Secure HTTP) encrypts communications between the host and client
+
+4.Transport and Network interface layer
+
+5.To add the source and destination IP adresses to packet headers, guiding the packet to its destination as well as to strip the address information from the packets when recieving the packets
+
+6.After the transport layer reassembles the packet, the recieving computer checks if the data recieved matches the original by comparing the recieved checksum with its destination checksum, if they match, the data is correct.
+
+7.The checksum and sequence number of packet
+
+8.If a large amount of data is being sent(without being turned into packets), and some network problem happens, then the data might not arrive, and have to be completely resent, however packets can then take a more efficient path in case something goes wrong, so this is not a problem for them
+
+9.IMAP and SMTP will probably be used for sending and reading emails

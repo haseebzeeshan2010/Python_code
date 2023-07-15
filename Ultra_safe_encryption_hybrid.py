@@ -1,0 +1,2 @@
+unencrypted = input("Enter words")
+
